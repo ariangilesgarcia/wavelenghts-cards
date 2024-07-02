@@ -81,17 +81,36 @@
         from { transform: translateX(0); }
         to { transform: translateX(-100%); }
     }
+
+    #switchSetButton {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; /* Make it round */
+        background-color: #fff9f2; /* Green background */
+        color: #333;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #switchSetButton:hover {
+        background-color: #fff9f2; /* Darker shade on hover */
+    }
 </style>
 </head>
 <body>
 <div class="container">
     <div class="half left">
-        <div class="text" id="leftWord">👈</div>
+        <div class="text" id="leftCard">👈</div>
     </div>
     <div class="half right">
-        <div class="text" id="rightWord">👉</div>
+        <div class="text" id="rightCard">👉</div>
     </div>
 </div>
-<button id="newCardsButton" onclick="generateWords()">New cards!</button>
+<button id="newCardsButton" onclick="getCardPair()">New cards!</button>
+<button id="switchSetButton" onclick="switchCardSet()">Switch</button> <!-- New Button -->
 </body>
 </html>
