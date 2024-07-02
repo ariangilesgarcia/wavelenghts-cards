@@ -138,7 +138,7 @@ const cardSets = {
         ['Recital en el Teatro Colón', 'Recital en el Luna Park'],
         ['Autoservicio', 'Atención personalizada'],
         ['Fanático del chamamé', 'Fanático del cuarteto'],
-        ['Disfruta la peatonal, 'Disfruta el mall'],
+        ['Disfruta la peatonal', 'Disfruta el mall'],
         ['Juega al truco', 'Juega al poker'],
         ['Prefiere la radio', 'Prefiere podcasts'],
         ['San Martín', 'Belgrano'],
@@ -199,8 +199,8 @@ let cardPairs = cardSets[currentSet];
 function getCardPair() {
     const pairIndex = Math.floor(Math.random() * cardPairs.length);
     const selectedPair = cardPairs[pairIndex];
-    document.getElementById('leftCard').textContent = '👈 ' + selectedPair[0];
-    document.getElementById('rightCard').textContent = selectedPair[1] + ' 👉';
+    document.getElementById('leftCard').innerHTML = '👈<br>' + selectedPair[0];
+    document.getElementById('rightCard').innerHTML = selectedPair[1] + '<br>👉';
 }
 
 function switchCardSet() {
