@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wavelenghts Words | by arian.gg </title>
+<title>Wavelengths Words | by arian.gg</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <style>
     body, html {
         height: 100%;
@@ -30,9 +31,11 @@
     }
     .left {
         background-color: #54a9d0; /* Updated color */
+        color: #fff9f2;
     }
     .right {
         background-color: #fa723a; /* Updated color */
+        color: #fff9f2;
     }
     .text {
         font-size: 5vw; /* Responsive font size based on viewport width */
@@ -45,13 +48,39 @@
         padding: 10px 20px;
         font-size: 16px;
         cursor: pointer;
+        background-color: #333;
+        color: #fff9f2;
     }
-    @media (max-width: 600px) { /* CSS for screens smaller than 600px wide */
+    button {
+        display: inline-block;
+        outline: 0;
+        border:0;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        color: #000;
+        background: #fff;
+        line-height: 30px;
+        border-radius: 40px;
+        padding: 20px;
+        box-shadow: #54a9d0 -2px -2px 0px 2px, #fa723a 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+        transition: all 0.2s;
+        font-family: 'MuseoModerno', sans-serif;
+    }
+    button:hover{
+        box-shadow: #fa723a -2px -2px 0px 2px, #54a9d0 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+        transform: scale(1.01);
+    }
+    @media (max-width: 4000px) { /* CSS for screens smaller than 600px wide */
         .container {
             flex-direction: column; /* Stack the items vertically */
         }
         .text {
             font-size: 10vw; /* Larger font size for vertical stacking on small screens */
+        }
+        #newWordsBtn {
+            top: 50%; /* Center vertically */
+            transform: translate(-50%, -50%); /* Adjust for both axes */
         }
     }
 </style>
@@ -59,10 +88,10 @@
 <body>
 <div class="container">
     <div class="half left">
-        <div class="text" id="leftWord">Hello</div>
+        <div class="text" id="leftWord">👈</div>
     </div>
     <div class="half right">
-        <div class="text" id="rightWord">World</div>
+        <div class="text" id="rightWord">👉</div>
     </div>
 </div>
 <button id="newWordsBtn" onclick="generateWords()">Generate New Words</button>
@@ -80,8 +109,8 @@
         const pairIndex = Math.floor(Math.random() * wordPairs.length);
         const selectedPair = wordPairs[pairIndex];
 
-        document.getElementById('leftWord').textContent = selectedPair[0];
-        document.getElementById('rightWord').textContent = selectedPair[1];
+        document.getElementById('leftWord').textContent = '👈 ' + selectedPair[0];
+        document.getElementById('rightWord').textContent = selectedPair[1] + ' 👉' ;
     }
 </script>
 </body>
