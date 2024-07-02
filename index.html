@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wavelenghts Words | by arian.gg </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: 'Bowlby One', sans-serif;
+        overflow: hidden;
+    }
+    .container {
+        display: flex;
+        flex-direction: row; /* Default layout is side by side */
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    .half {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+    .left {
+        background-color: #54a9d0; /* Updated color */
+    }
+    .right {
+        background-color: #fa723a; /* Updated color */
+    }
+    .text {
+        font-size: 5vw; /* Responsive font size based on viewport width */
+    }
+    #newWordsBtn {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    @media (max-width: 600px) { /* CSS for screens smaller than 600px wide */
+        .container {
+            flex-direction: column; /* Stack the items vertically */
+        }
+        .text {
+            font-size: 10vw; /* Larger font size for vertical stacking on small screens */
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="half left">
+        <div class="text" id="leftWord">Hello</div>
+    </div>
+    <div class="half right">
+        <div class="text" id="rightWord">World</div>
+    </div>
+</div>
+<button id="newWordsBtn" onclick="generateWords()">Generate New Words</button>
+
+<script>
+    const wordPairs = [
+        ['Hello', 'World'],
+        ['Coffee', 'Tea'],
+        ['Rain', 'Sunshine'],
+        ['Mountain', 'Valley'],
+        ['Summer', 'Winter']
+    ];
+
+    function generateWords() {
+        const pairIndex = Math.floor(Math.random() * wordPairs.length);
+        const selectedPair = wordPairs[pairIndex];
+
+        document.getElementById('leftWord').textContent = selectedPair[0];
+        document.getElementById('rightWord').textContent = selectedPair[1];
+    }
+</script>
+</body>
+</html>
