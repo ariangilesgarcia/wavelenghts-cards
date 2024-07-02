@@ -18,7 +18,7 @@
     }
     .container {
         display: flex;
-        flex-direction: row; /* Default layout is side by side */
+        flex-direction: column; /* Default layout is side by side */
         height: 100%;
         width: 100%;
         position: relative;
@@ -39,13 +39,13 @@
         color: #fff9f2;
     }
     .text {
-        font-size: 5vw; /* Responsive font size based on viewport width */
+        font-size: 8vw;
     }
-    #newWordsBtn {
+    #newCardsButton {
         position: absolute;
-        top: 20px;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%); /* Adjust for both axes */
         padding: 20px 60px;
         font-size: 1.8em;
         cursor: pointer;
@@ -71,18 +71,6 @@
         box-shadow: #fa723a -2px -2px 0px 2px, #54a9d0 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
         transform: scale(1.01);
     }
-    @media (max-width: 4000px) { /* CSS for screens smaller than 600px wide */
-        .container {
-            flex-direction: column; /* Stack the items vertically */
-        }
-        .text {
-            font-size: 10vw; /* Larger font size for vertical stacking on small screens */
-        }
-        #newWordsBtn {
-            top: 50%; /* Center vertically */
-            transform: translate(-50%, -50%); /* Adjust for both axes */
-        }
-    }
 </style>
 </head>
 <body>
@@ -94,6 +82,6 @@
         <div class="text" id="rightWord">👉</div>
     </div>
 </div>
-<button id="newWordsBtn" onclick="generateWords()">New cards!</button>
+<button id="newCardsButton" onclick="generateWords()">New cards!</button>
 </body>
 </html>
