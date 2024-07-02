@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wavelengths Words | by arian.gg</title>
+<script type="module" src="cards.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
@@ -93,24 +94,6 @@
         <div class="text" id="rightWord">👉</div>
     </div>
 </div>
-<button id="newWordsBtn" onclick="generateWords()">New round</button>
-
-<script>
-    const wordPairs = [
-        ['Hello', 'World'],
-        ['Coffee', 'Tea'],
-        ['Rain', 'Sunshine'],
-        ['Mountain', 'Valley'],
-        ['Summer', 'Winter']
-    ];
-
-    function generateWords() {
-        const pairIndex = Math.floor(Math.random() * wordPairs.length);
-        const selectedPair = wordPairs[pairIndex];
-
-        document.getElementById('leftWord').textContent = '👈 ' + selectedPair[0];
-        document.getElementById('rightWord').textContent = selectedPair[1] + ' 👉' ;
-    }
-</script>
+<button id="newWordsBtn" onclick="generateWords()">New cards!</button>
 </body>
 </html>
