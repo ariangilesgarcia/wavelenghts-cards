@@ -39,7 +39,12 @@
         color: #fff9f2;
     }
     .text {
-        font-size: 8vw;
+        font-size: 5vw; /* Adjust as necessary */
+        max-width: 50%; /* Allows text to use up to the full width of its container */
+        text-align: center; /* Centers text horizontally */
+        display: flex; /* Enables flexbox for this element */
+        justify-content: center; /* Centers content horizontally in flex container */
+        align-items: center; /* Centers content vertically in flex container */
     }
     #newCardsButton {
         position: absolute;
@@ -70,6 +75,11 @@
     button:hover{
         box-shadow: #fa723a -2px -2px 0px 2px, #54a9d0 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
         transform: scale(1.01);
+    }
+
+    @keyframes slide {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
     }
 </style>
 </head>

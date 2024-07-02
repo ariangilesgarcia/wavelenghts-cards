@@ -92,8 +92,8 @@ function generateWords() {
     const pairIndex = Math.floor(Math.random() * gameCards.length);
     const selectedPair = gameCards[pairIndex];
 
-    document.getElementById('leftWord').textContent = '👈 ' + selectedPair[0];
-    document.getElementById('rightWord').textContent = selectedPair[1] + ' 👉';
+    document.getElementById('leftWord').innerHTML = '👈<br>' + selectedPair[0];
+    document.getElementById('rightWord').innerHTML = selectedPair[1] + '<br>👉';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
